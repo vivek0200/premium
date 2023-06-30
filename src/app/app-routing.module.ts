@@ -1,7 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PaymentformComponent } from './paymentform/paymentform.component';
+import { PremiumDueComponent } from './premium-due/premium-due.component';
+import { PremiumHistoryComponent } from './premium-history/premium-history.component'
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'paymentform',
+    component: PaymentformComponent
+  },
+  {
+    path: 'premium-history',
+    component: PremiumHistoryComponent
+  },
+  {
+    path: 'premium-due',
+    component: PremiumDueComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

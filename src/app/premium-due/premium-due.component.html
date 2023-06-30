@@ -1,0 +1,20 @@
+<label for="">Click the button to search dues list</label>
+<button class="btn btn-primary duebtn" (click)="fetchData()">Search</button>
+<div class="container table table-striped ">
+<ul class="list-group ">
+  <div *ngIf="ispresent" >
+    <h2 class="dueListhadder">Dues List</h2>
+  </div>
+  <li class="list-group-item dueList mb-2" *ngFor="let item of data">
+    <p class="mb-1 list-group-item"><strong>Id:</strong> {{ item.id }}</p>
+    <p class="mb-1 list-group-item"><strong>username:</strong> {{ item.username }}</p>
+    <p class="mb-1 list-group-item"><strong>Policy Id:</strong> {{ item.policyId }}</p>
+    <p class="mb-1 list-group-item"><strong>Subscription Id:</strong> {{ item.subscriptionId }}</p>
+    <p class="mb-1 list-group-item"><strong>Premium Start Date:</strong> {{ item.premiumStartDate }}</p>
+    <p class="mb-1 list-group-item"><strong>Premium Amount:</strong> {{ item.premiumAmount }}</p>
+    <p class="mb-1 list-group-item"><strong>totalNumberOfPremiums:</strong> {{ item.totalNumberOfPremiums }}</p>
+    <p class="mb-1 list-group-item"><strong>currentPolicyStatus:</strong> {{ item.currentPolicyStatus }}</p>
+    <p class="mb-1 list-group-item"><strong>lastPaymentDate:</strong> {{ item.lastPaymentDate }}</p>
+  </li>
+</ul>
+</div>

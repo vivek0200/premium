@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    padding: 10px;
+    background-color: lightblue;
+}
+
+.navbar-nav .nav-link {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    /* Add any other font-related properties here */
+  }
+
+
