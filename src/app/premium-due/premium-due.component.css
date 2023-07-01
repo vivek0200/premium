@@ -8,3 +8,7 @@
 .dueListhadder{
     border-radius: 10px;
 }
+.dueh2{
+    display: flex;
+    align-items: center;
+}

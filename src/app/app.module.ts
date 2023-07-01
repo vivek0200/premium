@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PremiumHistoryComponent } from './premium-history/premium-history.component';
 import { FormsModule } from '@angular/forms';
 import { PremiumDueComponent } from './premium-due/premium-due.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PremiumDueComponent } from './premium-due/premium-due.component';
     AppComponent,
     PaymentformComponent,
     PremiumHistoryComponent,
-    PremiumDueComponent
+    PremiumDueComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
