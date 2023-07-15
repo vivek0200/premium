@@ -17,6 +17,10 @@ export class PremiumHistoryComponent {
       .subscribe(response => {
         this.data = response;
         console.warn(response);
+        if(!this.data){
+          console.warn("error");
+          this.isSearchQuerynull=true;
+        }
       });
   }
 }

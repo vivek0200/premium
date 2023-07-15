@@ -12,3 +12,9 @@
     display: flex;
     align-items: center;
 }
+.duelist {
+    width: 700px;
+}
+.list-group-item{
+    border-color: rgb(31, 6, 100);
+}

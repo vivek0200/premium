@@ -1,17 +1,24 @@
 <div class="container ">
     <h2>Premium History based on Username or Subscription ID</h2>
     <div class="row">
-      <div class="col-md-6">
-        <div class="input-group mb-3">
+      <div class="w-50 d-flex justify-content-between">
+        <div class="input-group mb-3 mr-2">
             <input [(ngModel)]="searchQuery" placeholder="Enter Username or Subscription ID" class="form-control mr-2" />
-            <div class="input-group-append">
+            <!-- <div class="input-group-append ml-2">
               <button class="btn btn-primary" (click)="fetchData()">Search</button>
-            </div>
+            </div> -->
+          </div>
+          <div>
+            &nbsp;
+            &nbsp;
+          </div>
+          <div class="input-group-append ml-2">
+            <button class="btn btn-primary" (click)="fetchData()">Search</button>
           </div>
       </div>
     </div>
-    <div *ngIf="data">
-      <h2>Search Results:</h2>
+    <div *ngIf="data" class="container premiumHistory">
+      <h2>Search Result:</h2>
       <ul class="list-group">
         <li class="list-group-item">
           <strong>Policy ID:</strong> {{ data.policyId }}
@@ -39,4 +46,8 @@
         </li>
       </ul>
     </div>
+    <div *ngIf="isSearchQuerynull" class="alert alert-danger mt-3 searchQuery ">
+      Please enter valid Username or subscriptionId.
+    </div>
   </div>
+  

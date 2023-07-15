@@ -1,14 +1,15 @@
 <!-- <label for="">Click the button to search dues list</label> -->
 <div class="container inline dueh2">
-  <h2>Click the button to search dues list</h2>
+  <h2>Click the button to veiw dues list</h2>
   <button class="btn btn-primary duebtn" (click)="fetchData()">Search</button>
 </div>
-<div class="container table table-striped ">
+<div *ngIf="ispresent" class="container table table-striped duelist ">
+  <h2 class="dueListhadder ">Dues List:</h2>
 <ul class="list-group ">
-  <div *ngIf="ispresent" >
-    <h2 class="dueListhadder text-center">Dues List</h2>
-  </div>
-  <li class="list-group-item dueList mb-2" *ngFor="let item of data">
+  <!-- <div *ngIf="ispresent" >
+    <h2 class="dueListhadder ">Dues List</h2>
+  </div> -->
+  <li class="list-group-item dueList mb-2 " *ngFor="let item of data">
     <p class="mb-1 list-group-item"><strong>Id:</strong> {{ item.id }}</p>
     <p class="mb-1 list-group-item"><strong>Username:</strong> {{ item.username }}</p>
     <p class="mb-1 list-group-item"><strong>Policy Id:</strong> {{ item.policyId }}</p>

@@ -17,10 +17,10 @@ export class PaymentformComponent {
     this.premiumForm = this.formBuilder.group({
       paymentDate: '',
       bankTransactionId: '',
-      premiumAmount: 0,
-      lateFee: 0,
+      premiumAmount: '',
+      lateFee: '',
       paymentMethodId: 0,
-      premiumMasterId: 0
+      premiumMasterId: ''
     });
   }
 
@@ -32,6 +32,14 @@ export class PaymentformComponent {
           // Handle successful submission, e.g., show a success message
           this.formSubmitted = true;
           console.log('Premium payments added successfully.');
+          this.premiumForm = this.formBuilder.group({
+            paymentDate: '',
+            bankTransactionId: '',
+            premiumAmount: '',
+            lateFee: '',
+            paymentMethodId: 0,
+            premiumMasterId: ''
+          });
         }, (error) => {
           // Handle error, e.g., show an error message
           console.error('Failed to add premium payments:', error);
