@@ -15,7 +15,7 @@ export class PaymentformComponent {
     private premiumPaymentsService: PremiumPaymentsService
   ) {
     this.premiumForm = this.formBuilder.group({
-      paymentDate: '',
+      paymentDate: new Date().toISOString().split('T')[0],
       bankTransactionId: '',
       premiumAmount: '',
       lateFee: '',
@@ -27,13 +27,16 @@ export class PaymentformComponent {
   onSubmit(): void {
     if (this.premiumForm.valid) {
       const premiumPayments = this.premiumForm.value;
+      if (!premiumPayments.paymentDate) {
+        premiumPayments.paymentDate = new Date();
+      }
       this.premiumPaymentsService.addPremiumPayments(premiumPayments)
         .subscribe(() => {
           // Handle successful submission, e.g., show a success message
           this.formSubmitted = true;
           console.log('Premium payments added successfully.');
           this.premiumForm = this.formBuilder.group({
-            paymentDate: '',
+            paymentDate: new Date().toISOString().split('T')[0],
             bankTransactionId: '',
             premiumAmount: '',
             lateFee: '',
